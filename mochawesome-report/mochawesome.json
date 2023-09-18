@@ -1,0 +1,290 @@
+{
+  "stats": {
+    "suites": 3,
+    "tests": 8,
+    "passes": 4,
+    "pending": 0,
+    "failures": 4,
+    "start": "2023-09-18T06:40:18.595Z",
+    "end": "2023-09-18T06:40:25.580Z",
+    "duration": 6985,
+    "testsRegistered": 8,
+    "passPercent": 50,
+    "pendingPercent": 0,
+    "other": 0,
+    "hasOther": false,
+    "skipped": 0,
+    "hasSkipped": false
+  },
+  "results": [
+    {
+      "uuid": "6bd22aaa-c4cc-465a-9679-bcabd813baaa",
+      "title": "",
+      "fullFile": "",
+      "file": "",
+      "beforeHooks": [],
+      "afterHooks": [],
+      "tests": [],
+      "suites": [
+        {
+          "uuid": "520121e7-c951-4a86-8178-4ca656353bc2",
+          "title": "Register Test",
+          "fullFile": "D:\\File Code\\QA\\StudyJam\\Portofolio\\automation_api\\test\\scenario\\auth.test.js",
+          "file": "\\test\\scenario\\auth.test.js",
+          "beforeHooks": [],
+          "afterHooks": [],
+          "tests": [
+            {
+              "title": "Verify auth with input valid data",
+              "fullTitle": "Register Test Verify auth with input valid data",
+              "timedOut": false,
+              "duration": 1083,
+              "state": "passed",
+              "speed": "slow",
+              "pass": true,
+              "fail": false,
+              "pending": false,
+              "context": null,
+              "code": "const response = await BookerApi.auth(data.VALID_REGISTER);\nassert.equal(response.status, 200);",
+              "err": {},
+              "uuid": "77962963-5316-40b6-af23-bdd4cd35293f",
+              "parentUUID": "520121e7-c951-4a86-8178-4ca656353bc2",
+              "isHook": false,
+              "skipped": false
+            }
+          ],
+          "suites": [],
+          "passes": [
+            "77962963-5316-40b6-af23-bdd4cd35293f"
+          ],
+          "failures": [],
+          "pending": [],
+          "skipped": [],
+          "duration": 1083,
+          "root": false,
+          "rootEmpty": false,
+          "_timeout": 2000
+        },
+        {
+          "uuid": "b03974c5-0ef6-4238-8bb6-6083e044b841",
+          "title": "Booking",
+          "fullFile": "D:\\File Code\\QA\\StudyJam\\Portofolio\\automation_api\\test\\scenario\\booking.test.js",
+          "file": "\\test\\scenario\\booking.test.js",
+          "beforeHooks": [],
+          "afterHooks": [],
+          "tests": [
+            {
+              "title": "Validate get booking id",
+              "fullTitle": "Booking Validate get booking id",
+              "timedOut": false,
+              "duration": 1319,
+              "state": "passed",
+              "speed": "slow",
+              "pass": true,
+              "fail": false,
+              "pending": false,
+              "context": null,
+              "code": "const response = await BookerApi.getbookingid();\nassert.equal(response.status, 200);   \nexpect(response.data).to.be.jsonSchema(schema.GET_BOOKING_ID_SCHEMA)",
+              "err": {},
+              "uuid": "728bd6cf-e931-48d2-98fa-e05c2949b7c7",
+              "parentUUID": "b03974c5-0ef6-4238-8bb6-6083e044b841",
+              "isHook": false,
+              "skipped": false
+            },
+            {
+              "title": "Validate specific get booking id",
+              "fullTitle": "Booking Validate specific get booking id",
+              "timedOut": false,
+              "duration": 738,
+              "state": "failed",
+              "speed": null,
+              "pass": false,
+              "fail": true,
+              "pending": false,
+              "context": null,
+              "code": "const param = getParams(data.GET_BOOKING_PARAMS.page)\nconst response = await BookerApi.getbooking(param);\nassert.equal(response.status, 200);\nexpect(response.data).to.be.jsonSchema(schema.GET_SPECIFIC_BOOKING_ID_SCHEMA)",
+              "err": {
+                "message": "AssertionError: expected 404 to equal 200",
+                "estack": "AssertionError: expected 404 to equal 200\n    at Context.<anonymous> (file:///D:/File%20Code/QA/StudyJam/Portofolio/automation_api/test/scenario/booking.test.js:22:16)\n    at processTicksAndRejections (node:internal/process/task_queues:96:5)",
+                "diff": "- 404\n+ 200\n"
+              },
+              "uuid": "dd508df4-c70f-4ce6-baf1-5e04a4724710",
+              "parentUUID": "b03974c5-0ef6-4238-8bb6-6083e044b841",
+              "isHook": false,
+              "skipped": false
+            },
+            {
+              "title": "Validate create booking",
+              "fullTitle": "Booking Validate create booking",
+              "timedOut": false,
+              "duration": 748,
+              "state": "passed",
+              "speed": "slow",
+              "pass": true,
+              "fail": false,
+              "pending": false,
+              "context": null,
+              "code": "const response = await BookerApi.creategetbooking(data.CREATE_BOOKING);\nassert.equal(response.status, 200);   \nexpect(response.data).to.be.jsonSchema(schema.CREATE_BOOKING)",
+              "err": {},
+              "uuid": "8da4e575-fa61-45a8-9f65-4b23147d74ec",
+              "parentUUID": "b03974c5-0ef6-4238-8bb6-6083e044b841",
+              "isHook": false,
+              "skipped": false
+            },
+            {
+              "title": "Validate update booking",
+              "fullTitle": "Booking Validate update booking",
+              "timedOut": false,
+              "duration": 765,
+              "state": "failed",
+              "speed": null,
+              "pass": false,
+              "fail": true,
+              "pending": false,
+              "context": null,
+              "code": "const response = await BookerApi.updatebooking(data.UPDATE_BOOKING);\nassert.equal(response.status, 200);",
+              "err": {
+                "message": "AssertionError: expected 403 to equal 200",
+                "estack": "AssertionError: expected 403 to equal 200\n    at Context.<anonymous> (file:///D:/File%20Code/QA/StudyJam/Portofolio/automation_api/test/scenario/booking.test.js:38:16)\n    at processTicksAndRejections (node:internal/process/task_queues:96:5)",
+                "diff": "- 403\n+ 200\n"
+              },
+              "uuid": "888485be-9927-4dc3-9f0b-77f40dbb4a1b",
+              "parentUUID": "b03974c5-0ef6-4238-8bb6-6083e044b841",
+              "isHook": false,
+              "skipped": false
+            },
+            {
+              "title": "Validate partial update booking",
+              "fullTitle": "Booking Validate partial update booking",
+              "timedOut": false,
+              "duration": 777,
+              "state": "failed",
+              "speed": null,
+              "pass": false,
+              "fail": true,
+              "pending": false,
+              "context": null,
+              "code": "const response = await BookerApi.partialupdate(data.PARTIAL_UPDATE);\nassert.equal(response.status, 200);",
+              "err": {
+                "message": "AssertionError: expected 403 to equal 200",
+                "estack": "AssertionError: expected 403 to equal 200\n    at Context.<anonymous> (file:///D:/File%20Code/QA/StudyJam/Portofolio/automation_api/test/scenario/booking.test.js:44:16)\n    at processTicksAndRejections (node:internal/process/task_queues:96:5)",
+                "diff": "- 403\n+ 200\n"
+              },
+              "uuid": "a8aae41d-150a-4f25-ae4a-eb49c0f90168",
+              "parentUUID": "b03974c5-0ef6-4238-8bb6-6083e044b841",
+              "isHook": false,
+              "skipped": false
+            },
+            {
+              "title": "Validate delete booking id",
+              "fullTitle": "Booking Validate delete booking id",
+              "timedOut": false,
+              "duration": 787,
+              "state": "failed",
+              "speed": null,
+              "pass": false,
+              "fail": true,
+              "pending": false,
+              "context": null,
+              "code": "const response = await BookerApi.deletebooking();\nassert.equal(response.status, 200);",
+              "err": {
+                "message": "AssertionError: expected 403 to equal 200",
+                "estack": "AssertionError: expected 403 to equal 200\n    at Context.<anonymous> (file:///D:/File%20Code/QA/StudyJam/Portofolio/automation_api/test/scenario/booking.test.js:50:16)\n    at processTicksAndRejections (node:internal/process/task_queues:96:5)",
+                "diff": "- 403\n+ 200\n"
+              },
+              "uuid": "f0445c59-d2be-41e2-84ed-ab5f56f0c8a2",
+              "parentUUID": "b03974c5-0ef6-4238-8bb6-6083e044b841",
+              "isHook": false,
+              "skipped": false
+            }
+          ],
+          "suites": [],
+          "passes": [
+            "728bd6cf-e931-48d2-98fa-e05c2949b7c7",
+            "8da4e575-fa61-45a8-9f65-4b23147d74ec"
+          ],
+          "failures": [
+            "dd508df4-c70f-4ce6-baf1-5e04a4724710",
+            "888485be-9927-4dc3-9f0b-77f40dbb4a1b",
+            "a8aae41d-150a-4f25-ae4a-eb49c0f90168",
+            "f0445c59-d2be-41e2-84ed-ab5f56f0c8a2"
+          ],
+          "pending": [],
+          "skipped": [],
+          "duration": 5134,
+          "root": false,
+          "rootEmpty": false,
+          "_timeout": 2000
+        },
+        {
+          "uuid": "c8a6a0fb-6af4-4659-a37b-c5c643069486",
+          "title": "Health Check",
+          "fullFile": "D:\\File Code\\QA\\StudyJam\\Portofolio\\automation_api\\test\\scenario\\ping.test.js",
+          "file": "\\test\\scenario\\ping.test.js",
+          "beforeHooks": [],
+          "afterHooks": [],
+          "tests": [
+            {
+              "title": "Verify simple health check endpoint",
+              "fullTitle": "Health Check Verify simple health check endpoint",
+              "timedOut": false,
+              "duration": 748,
+              "state": "passed",
+              "speed": "slow",
+              "pass": true,
+              "fail": false,
+              "pending": false,
+              "context": null,
+              "code": "const response = await BookerApi.healthcheck();\nassert.equal(response.status, 201);",
+              "err": {},
+              "uuid": "14de80f9-74bb-467c-8a1e-ee6071a91fc6",
+              "parentUUID": "c8a6a0fb-6af4-4659-a37b-c5c643069486",
+              "isHook": false,
+              "skipped": false
+            }
+          ],
+          "suites": [],
+          "passes": [
+            "14de80f9-74bb-467c-8a1e-ee6071a91fc6"
+          ],
+          "failures": [],
+          "pending": [],
+          "skipped": [],
+          "duration": 748,
+          "root": false,
+          "rootEmpty": false,
+          "_timeout": 2000
+        }
+      ],
+      "passes": [],
+      "failures": [],
+      "pending": [],
+      "skipped": [],
+      "duration": 0,
+      "root": true,
+      "rootEmpty": true,
+      "_timeout": 2000
+    }
+  ],
+  "meta": {
+    "mocha": {
+      "version": "10.2.0"
+    },
+    "mochawesome": {
+      "options": {
+        "quiet": false,
+        "reportFilename": "mochawesome",
+        "saveHtml": true,
+        "saveJson": true,
+        "consoleReporter": "spec",
+        "useInlineDiffs": false,
+        "code": true
+      },
+      "version": "7.1.3"
+    },
+    "marge": {
+      "options": null,
+      "version": "6.2.0"
+    }
+  }
+}
