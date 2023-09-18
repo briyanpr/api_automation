@@ -8,7 +8,7 @@ const BaseApi = axios.create({
     headers:{
         "Content-Type" : "application/json",
         "Accept" : "application/json",
-        "Authorization": "YWRtaW46cGFzc3dvcmQxMjM="
+        "Authorization": "Basic YWRtaW46cGFzc3dvcmQxMjM="
     },
     validateStatus:() => {
         return true;

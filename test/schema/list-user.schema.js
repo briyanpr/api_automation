@@ -798,3 +798,89 @@ export const CREATE_BOOKING = {
     },
     
 }
+
+export const UPDATE_BOOKING = {
+    "$schema": "https://json-schema.org/draft/2019-09/schema",
+    "type": "object",
+    "default": {},
+    "required": [
+        "firstname",
+        "lastname",
+        "totalprice",
+        "depositpaid",
+        "bookingdates",
+        "additionalneeds"
+    ],
+    "properties": {
+        "firstname": {
+            "type": "string",
+            "default": "",
+            
+        },
+        "lastname": {
+            "type": "string",
+            "default": "",
+            
+        },
+        "totalprice": {
+            "type": "integer",
+            "default": 0,
+            
+        },
+        "depositpaid": {
+            "type": "boolean",
+            "default": false,
+            
+        },
+        "bookingdates": {
+            "type": "object",
+            "default": {},
+            
+            "required": [
+                "checkin",
+                "checkout"
+            ],
+            "properties": {
+                "checkin": {
+                    "type": "string",
+                    "default": "",
+                    
+                },
+                "checkout": {
+                    "type": "string",
+                    "default": "",
+                    
+                }
+            },
+            
+        },
+        "additionalneeds": {
+            "type": "string",
+            "default": "",
+            
+        }
+    },
+    
+}
+
+export const PARTIAL_UPDATE = {
+    "$schema": "https://json-schema.org/draft/2019-09/schema",
+    "type": "object",
+    "default": {},
+    "required": [
+        "firstname",
+        "lastname"
+    ],
+    "properties": {
+        "firstname": {
+            "type": "string",
+            "default": "",
+            
+        },
+        "lastname": {
+            "type": "string",
+            "default": "",
+            
+        }
+    },
+}

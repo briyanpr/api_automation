@@ -35,19 +35,21 @@ describe('Booking', ()=>{
     it('Validate update booking', async()=>{
         const response = await BookerApi.updatebooking(data.UPDATE_BOOKING);
 
-        assert.equal(response.status, 200);    
+        assert.equal(response.status, 200);
+        expect(response.data).to.be.jsonSchema(schema.UPDATE_BOOKING)    
     }); 
 
     it('Validate partial update booking', async()=>{
         const response = await BookerApi.partialupdate(data.PARTIAL_UPDATE);
 
-        assert.equal(response.status, 200);    
+        assert.equal(response.status, 200);   
+        expect(response.data).to.be.jsonSchema(schema.PARTIAL_UPDATE)  
     }); 
 
     it('Validate delete booking id', async()=>{
         const response = await BookerApi.deletebooking();
 
-        assert.equal(response.status, 200);   
+        assert.equal(response.status, 201);   
     }); 
 
 })

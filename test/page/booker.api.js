@@ -8,7 +8,7 @@ const BookerApi = {
     updatebooking: (data)=> BaseApi.put('/booking/1', data),
     partialupdate: (data)=> BaseApi.patch('/booking/1', data),
     deletebooking:()=> BaseApi.delete('/booking/1'),
-    healthcheck:()=>BaseApi.get('ping')
+    healthcheck:()=>BaseApi.get('/ping')
 }
 
 export default BookerApi;
